@@ -1,0 +1,19 @@
+{
+  "name": "browser-wii-remote",
+  "version": "0.0.1",
+  "description": "Use experimental bluetooth and HID APIs to connect to wii remotes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepack": "tsc"
+  },
+  "keywords": [
+    "wiimote"
+  ],
+  "devDependencies": {
+    "typescript": "^4.0.3",
+    "@types/web-bluetooth": "^0.0.9"
+  },
+  "author": "Nathanial Lubitz",
+  "license": "ISC"
+}
