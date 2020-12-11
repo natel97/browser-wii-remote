@@ -21,12 +21,14 @@ steps:
       NPM_TOKEN:
         from_secret: npm_token
     commands:
+      - apk add git
       - yarn config set registry https://registry.npmjs.org/:_authToken=$NPM_TOKEN
       - yarn
       - yarn build
       - yarn test
-      - yarn login
-      - yarn publish --tag $DRONE_TAG --verbose
+      - git config --global user.email $DRONE_CONFIG_AUTHOR_EMAIL
+      - git config --global user.name $DRONE_CONFIG_AUTHOR
+      - yarn publish --new-version $DRONE_TAG --verbose
     secrets:
       - npm_token
 
