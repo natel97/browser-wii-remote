@@ -25,6 +25,7 @@ steps:
       - yarn
       - yarn build
       - yarn test
+      - rm yarn.lock
       - yarn publish --new-version $DRONE_TAG --verbose
     secrets:
       - npm_token
