@@ -16,7 +16,7 @@
     "@types/web-bluetooth": "^0.0.9"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.com"
   },
   "author": "Nathanial Lubitz",
   "license": "ISC"

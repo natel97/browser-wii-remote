@@ -21,7 +21,7 @@ steps:
       NPM_TOKEN:
         from_secret: npm_token
     commands:
-      - yarn config set registry https://registry.npmjs.org/:_authToken=$NPM_TOKEN
+      - yarn config set registry https://registry.npmjs.com/:_authToken=$NPM_TOKEN
       - yarn
       - yarn build
       - yarn test
