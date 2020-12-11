@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "Use experimental bluetooth and HID APIs to connect to wii remotes",
   "main": "index.js",
+  "repository":"https://github.com/natel97/browser-wii-remote",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepack": "tsc"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "tsc"
   },
   "keywords": [
     "wiimote"

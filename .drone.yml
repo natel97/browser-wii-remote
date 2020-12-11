@@ -1,0 +1,29 @@
+---
+kind: pipeline
+name: Merged
+
+steps:
+  - name: build
+    image: node:14.5.0-alpine3.10
+    commands:
+      - yarn
+      - yarn build
+      - yarn test
+
+---
+kind: pipeline
+name: Tag and Deploy to NPM
+
+steps:
+  - name: Do Deploy
+    image: node:14.5.0-alpine3.10
+    commands:
+      - yarn
+      - yarn build
+      - yarn test
+      - yarn publish --tag $DRONE_TAG
+    secrets: [npm_token]
+
+trigger:
+  event:
+    - tag
