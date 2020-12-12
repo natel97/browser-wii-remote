@@ -1,6 +1,6 @@
 {
   "name": "browser-wii-remote",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Use experimental bluetooth and HID APIs to connect to wii remotes",
   "main": "index.js",
   "repository": "https://github.com/natel97/browser-wii-remote",
