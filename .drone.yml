@@ -25,7 +25,7 @@ steps:
       - npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
       - npm publish --access public --verbose
     secrets:
-      - npm_token
+      - NPM_TOKEN
 
 ---
 kind: pipeline
