@@ -10,6 +10,23 @@ steps:
       - yarn build
       - yarn test
 
+  - name: Do Deploy
+    image: node:14.5.0-alpine3.10
+    environment:
+      NPM_TOKEN:
+        from_secret: npm_token
+    commands:
+      - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
+      - yarn
+      - yarn build
+      - yarn test
+      - rm yarn.lock
+      - npm version $DRONE_TAG
+      - npm whoami
+      - npm publish --access public
+    secrets:
+      - npm_token
+
 ---
 kind: pipeline
 name: Tag and Deploy to NPM
@@ -27,7 +44,8 @@ steps:
       - yarn test
       - rm yarn.lock
       - npm version $DRONE_TAG
-      - npm publish
+      - npm whoami
+      - npm publish --access public
     secrets:
       - npm_token
 
