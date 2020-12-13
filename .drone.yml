@@ -22,8 +22,8 @@ steps:
       - yarn test
       - rm yarn.lock
       - npm version $DRONE_TAG
-      - npm whoami
-      - npm publish --access public
+      - npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+      - npm publish --access public --verbose
     secrets:
       - npm_token
 
