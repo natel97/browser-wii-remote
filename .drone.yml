@@ -9,6 +9,11 @@ steps:
       - yarn
       - yarn build
       - yarn test
+trigger:
+  branch:
+    - master
+  event:
+    - push
 
 ---
 kind: pipeline
@@ -25,7 +30,6 @@ steps:
       - yarn
       - yarn build
       - yarn test
-      - rm yarn.lock
       - npm version $DRONE_TAG
       - npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
       - npm publish --access public --verbose
